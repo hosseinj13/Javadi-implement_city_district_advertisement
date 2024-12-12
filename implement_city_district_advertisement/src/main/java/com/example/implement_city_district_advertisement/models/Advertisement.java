@@ -42,8 +42,12 @@ public class Advertisement {
     @JoinColumn(name = "district_id", nullable = false)
     District district;
 
-    @Column(nullable = false)
-    Long userId;
+//    @Column(nullable = false)
+//    Long userId;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    User user;
 
     @Column(nullable = false, updatable = false)
     LocalDateTime createdAt;
